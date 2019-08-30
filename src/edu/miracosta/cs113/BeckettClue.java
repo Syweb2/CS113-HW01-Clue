@@ -1,26 +1,11 @@
 package edu.miracosta.cs113;
 
-/**
- * RandomClue.java : Your job is to ask your AssistantJack and get the correct
- * answer in <= 20 tries.  RandomClue is ONE solution to the problem,
- * where a set of random numbers is generated every attempt until all three
- * random numbers match the solution from the AssistantJack object.
- *
- * This is a sample solution, a driver using random number implementation.
- * You can use this file as a guide to create your own SEPARATE driver for
- * your implementation that can solve it in <= 20 times consistently.
- *
- * @author Nery Chapeton-Lamas (material from Kevin Lewis)
- * @version 1.0
- *
- */
-
+import model.AssistantJack;
+import model.Theory;
 import java.util.Random;
 import java.util.Scanner;
-import model.Theory;
-import model.AssistantJack;
 
-public class RandomClue {
+public class BeckettClue {
 
     /*
      * ALGORITHM:
@@ -28,11 +13,40 @@ public class RandomClue {
      * PROMPT "Which theory to test? (1, 2, 3[random]): "
      * READ answerSet
      * INSTANTIATE jack = new AssistantJack(answerSet)
+     * weapon = random int between 1 and 6
+     * location = random int between 1 and 10
+     * murder = random int between 1 and 6
+     * solution = jack.checkAnswer(weapon, location, murder)
      * DO
-     *      weapon = random int between 1 and 6
-     *      location = random int between 1 and 10
-     *      murder = random int between 1 and 6
-     *      solution = jack.checkAnswer(weapon, location, murder)
+     *
+     *      IF weapon != correct
+     *          OUTPUT "weapon is incorrect"
+     *          weapon = random int between 1 and 6
+     *          solution = jack.checkAnswer(weapon, location, murder)
+     *      ELSE IF location != correct
+     *          OUTPUT "location is incorrect"
+     *          location = random int between 1 and 10
+     *          solution = jack.checkAnswer(weapon, location, murder)
+     *      ELSE IF murder != correct
+     *          OUTPUT "murder is incorrect"
+     *          location = random int between 1 and 10
+     *          solution = jack.checkAnswer(weapon, location, murder)
+     *      ELSE IF weapon != correct && location != correct
+     *          CHOOSE RANDOM x = weapon or location
+     *          OUTPUT "x is incorrect"
+     *      ELSE IF weapon != correct && murder != correct
+     *          CHOOSE RANDOM x = weapon or murder
+     *          OUTPUT "x is incorrect"
+     *      ELSE IF location != correct && murder != correct
+     *          CHOOSE RANDOM x = location or murder
+     *          OUTPUT "x is incorrect"
+     *      ELSE IF weapon != correct && location != correct && murder != correct
+     *          CHOOSE RANDOM x = weapon or location or murder
+     *          OUTPUT "x is incorrect"
+     *      ELSE
+     *          solution = 0
+     *
+     *      END IF
      * WHILE solution != 0
      *
      * OUTPUT "Total checks = " + jack.getTimesAsked()
