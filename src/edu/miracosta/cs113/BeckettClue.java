@@ -79,6 +79,8 @@ public class BeckettClue {
         jack = new AssistantJack(answerSet);
 
         do {
+            solution = jack.checkAnswer(weapon, location, murder);
+            if()
             weapon = random.nextInt(6) + 1;
             location = random.nextInt(10) + 1;
             murder = random.nextInt(6) + 1;
