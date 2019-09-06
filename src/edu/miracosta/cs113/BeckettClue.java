@@ -78,8 +78,30 @@ public class BeckettClue {
         // PROCESSING
         jack = new AssistantJack(answerSet);
 
+        weapon = random.nextInt(6) + 1;
+        location = random.nextInt(10) + 1;
+        murder = random.nextInt(6) + 1;
+        solution = jack.checkAnswer(weapon, location, murder);
+
         do {
+
+            switch(solution){
+                case(1):
+                    weapon = random.nextInt(6) + 1;
+                    break;
+                case(2):
+                    location = random.nextInt(10) + 1;
+                    break;
+                case(3):
+                    murder = random.nextInt(6) + 1;
+                    break;
+                default:
+                    solution = 0;
+                    break;
+            }
+
             solution = jack.checkAnswer(weapon, location, murder);
+            /*
             if(jack.checkAnswer(weapon) != 0){
                 weapon = random.nextInt(6) + 1;
                 solution = jack.checkAnswer(weapon, location, murder);
@@ -110,7 +132,9 @@ public class BeckettClue {
             }else {
             }
             }
-        } while (solution != 0);
+
+             */
+        }while(solution != 0);
 
         answer = new Theory(weapon, location, murder);
 
