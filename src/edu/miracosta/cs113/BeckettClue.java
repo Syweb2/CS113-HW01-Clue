@@ -19,34 +19,21 @@ public class BeckettClue {
      * solution = jack.checkAnswer(weapon, location, murder)
      * DO
      *
-     *      IF weapon != correct
-     *          OUTPUT "weapon is incorrect"
-     *          weapon = random int between 1 and 6
-     *          solution = jack.checkAnswer(weapon, location, murder)
-     *      ELSE IF location != correct
-     *          OUTPUT "location is incorrect"
-     *          location = random int between 1 and 10
-     *          solution = jack.checkAnswer(weapon, location, murder)
-     *      ELSE IF murder != correct
-     *          OUTPUT "murder is incorrect"
-     *          location = random int between 1 and 10
-     *          solution = jack.checkAnswer(weapon, location, murder)
-     *      ELSE IF weapon != correct && location != correct
-     *          CHOOSE RANDOM x = weapon or location
-     *          OUTPUT "x is incorrect"
-     *      ELSE IF weapon != correct && murder != correct
-     *          CHOOSE RANDOM x = weapon or murder
-     *          OUTPUT "x is incorrect"
-     *      ELSE IF location != correct && murder != correct
-     *          CHOOSE RANDOM x = location or murder
-     *          OUTPUT "x is incorrect"
-     *      ELSE IF weapon != correct && location != correct && murder != correct
-     *          CHOOSE RANDOM x = weapon or location or murder
-     *          OUTPUT "x is incorrect"
-     *      ELSE
-     *          solution = 0
+     *     switch(solution){
+     *          case(1):
+     *              weapon = random.nextInt(6) + 1;
+     *              break;
+     *          case(2):
+     *              location = random.nextInt(10) + 1;
+     *              break;
+     *          case(3):
+     *              murder = random.nextInt(6) + 1;
+     *              break;
+     *          default:
+     *              solution = 0;
+     *              break;
+     *      }
      *
-     *      END IF
      * WHILE solution != 0
      *
      * OUTPUT "Total checks = " + jack.getTimesAsked()
