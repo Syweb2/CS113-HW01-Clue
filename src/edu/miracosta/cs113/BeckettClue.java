@@ -101,39 +101,7 @@ public class BeckettClue {
             }
 
             solution = jack.checkAnswer(weapon, location, murder);
-            /*
-            if(jack.checkAnswer(weapon) != 0){
-                weapon = random.nextInt(6) + 1;
-                solution = jack.checkAnswer(weapon, location, murder);
-            }else if(jack.checkAnswer(location) != 0){
-                location = random.nextInt(10) + 1;
-                solution = jack.checkAnswer(weapon, location, murder);
-            }else if(jack.checkAnswer(murder) != 0){
-                murder = random.nextInt(6) + 1;
-                solution = jack.checkAnswer(weapon, location, murder);
-            }else if(jack.checkAnswer(weapon, location) != 0){
-                weapon = random.nextInt(6) + 1;
-                location = random.nextInt(10) + 1;
-                solution = jack.checkAnswer(weapon, location, murder);
-            }else if(jack.checkAnswer(weapon, murder) != 0){
-                weapon = random.nextInt(6) + 1;
-                murder = random.nextInt(6) + 1;
-                solution = jack.checkAnswer(weapon, location, murder);
-            }else if(jack.checkAnswer(location, murder) != 0){
-                location = random.nextInt(10) + 1;
-                murder = random.nextInt(6) + 1;
-                solution = jack.checkAnswer(weapon, location, murder);
-            }else if(jack.checkAnswer(weapon, location, murder) != 0){
-                weapon = random.nextInt(6) + 1;
-                location = random.nextInt(10) + 1;
-                murder = random.nextInt(6) + 1;
-                solution = jack.checkAnswer(weapon, location, murder);
 
-            }else {
-            }
-            }
-
-             */
         }while(solution != 0);
 
         answer = new Theory(weapon, location, murder);
